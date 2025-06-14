@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <script>
+    // vezme kód z query stringu
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    // sestaví deep link do appky
+    const target = 'myapp://callback' + (code ? '?code=' + encodeURIComponent(code) : '');
+    // přesměruje do Android appky
+    window.location.replace(target);
+  </script>
+</head>
+<body>
+  Redirecting to the app…
+</body>
+</html>
